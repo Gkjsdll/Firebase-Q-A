@@ -1,3 +1,7 @@
+#mainDiv {
+  width: 100%;
+}
+
 body {
   background-color: #E2E7FF;
 }
@@ -26,4 +30,19 @@ body {
 
 #listings {
   margin-top: 200px;
+  width: 100%;
+  padding-left: 0px;
+  margin-left: 0px;
+}
+
+#listings > div {
+  width: 100%;
+  padding: 16px 0px 16px 56px;
+  font-size: 24px;
+  background-color: #FFFFE2;
+}
+
+#listings > div:hover {
+  background-color: #FFFFB5;
+  cursor: pointer;
 }
