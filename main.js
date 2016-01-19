@@ -9,6 +9,7 @@ $(document).ready(function(){
   $listings = $("#listings");
   $mainDiv = $("#mainDiv");
   $itemInfo = $("#itemInfo");
+  $itemInfo.click(hideItemInfo);
   $listings.on("click", "div", showListing);
   mainRef.on("value", updateListings);
 });
@@ -32,7 +33,14 @@ function updateListings(listings){
   $listings.append(allListings);
 };
 
-function showListing(){
+function showListing(e){
+  debugger;
+  var data = mainRef.child($(this).data("key")).toString();
   $itemInfo.show();
   $mainDiv.hide();
+}
+
+function hideItemInfo(){
+  $itemInfo.hide();
+  $mainDiv.show();
 }

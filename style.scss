@@ -32,6 +32,7 @@ body {
   margin-top: 200px;
   width: 100%;
   padding-left: 0px;
+  padding-right: 0px;
   margin-left: 0px;
 }
 
@@ -40,9 +41,15 @@ body {
   padding: 16px 0px 16px 56px;
   font-size: 24px;
   background-color: #FFFFE2;
+  border-bottom: 1px solid lightgrey;
 }
 
 #listings > div:hover {
   background-color: #FFFFB5;
+  cursor: pointer;
+}
+
+#itemInfo span:hover {
+  color: red;
   cursor: pointer;
 }
