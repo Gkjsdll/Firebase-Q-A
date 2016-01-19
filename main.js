@@ -41,7 +41,6 @@ function updateListings(listings){
 function showListing(e){
   var listing = $(this).data("key");
   mainRef.child(listing).once("value", function(snap){
-    debugger;
     $itemInfo.find("#title").text(snap.val().title);
     $itemInfo.find("#infoContent").text(snap.val().content);
     $itemInfo.find("#time").text(snap.val().time);
@@ -68,7 +67,7 @@ function addComment(e){
 function popComments(baseKey){
   var comments = [];
 
-  mainRef.child(baseKey+"/messages").once("value", function(babySnap){ //add if statement, use array to prevent duplicate listeners
+  mainRef.child(baseKey+"/messages").once("value", function(babySnap){
     if(babySnap.val()){
       $.each(babySnap.val(), function(key){
         mainRef.child(baseKey+"/messages/"+key).once("value", function(x){
@@ -78,6 +77,7 @@ function popComments(baseKey){
       });
     }
   });
+
   $comments.empty();
   $comments.append(comments);
 }
