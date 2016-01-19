@@ -1,12 +1,14 @@
 var mainRef = new Firebase("https://gkjsdll-firebase-q-a.firebaseio.com/");
 
-var $newTitle, $newContent, $listings;
+var $newTitle, $newContent, $listings, $mainDiv, $itemInfo;
 
 $(document).ready(function(){
   $('#addListing button').click(createListing);
   $newTitle = $('#newTitle');
   $newContent = $('#newContent');
   $listings = $("#listings");
+  $mainDiv = $("#mainDiv");
+  $itemInfo = $("#itemInfo");
   $listings.on("click", "div", showListing);
   mainRef.on("value", updateListings);
 });
@@ -23,10 +25,14 @@ function updateListings(listings){
   listings.forEach(function(childSnapshot){
     debugger;
     var data = childSnapshot.val();
-    var listItem = $("<div>").text(data.title + " – " + data.content)
-                            .data("key", childSnapshot.key());
+    var listItem = $("<div>").text(data.title + " – " + data.content).data("key", childSnapshot.key());
     allListings.push(listItem);
   });
   $listings.empty();
   $listings.append(allListings);
 };
+
+function showListing(){
+  $itemInfo.show();
+  $mainDiv.hide();
+}
