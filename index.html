@@ -7,22 +7,31 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="mainDiv">
-    <div id="addListing">
-      <h2>Add Listing</h2>
-      <label for="newTitle">Title: </label>
-      <input type="text" id="newTitle">
-      <label for="newContent">Content: </label>
-      <input type="text" id="newContent">
-      <button>Add Listing</button>
+  <div class="container-fluid">
+    <div id="mainDiv">
+      <form id="addListing">
+        <h2>Add Listing</h2>
+        <label for="newTitle">Title: </label>
+        <input type="text" id="newTitle">
+        <label for="newContent">Content: </label>
+        <input type="text" id="newContent">
+        <button>Add Listing</button>
+      </form>
+      <div id="listings" class="col-xs-10 col-xs-offset-1"></div>
     </div>
-    <div id="listings" class="col-xs-10 col-xs-offset-1"></div>
-  </div>
-  <div id="itemInfo">
-    <span class="glyphicon glyphicon-remove"></span>
-    <p id="title">Title: </p>
-    <div id="infoContent"></div>
-    <p id="date">Date: </p>
+    <div id="itemInfo">
+      <span class="glyphicon glyphicon-remove"></span>
+      <div class="infoSpacer">
+        <p id="title"></p>
+        <p id="infoContent"></p>
+        <p id="time"></p>
+        <form id="comment">
+          <input type="text" id="itemComment">
+          <button>Comment</button>
+        </form>
+        <ul id="comments"></ul>
+      </div>
+    </div>
   </div>
 
   <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>

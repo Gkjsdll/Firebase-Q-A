@@ -2,6 +2,10 @@
   width: 100%;
 }
 
+.container-fluid {
+  padding: 0px 0px 0px 0px;
+}
+
 body {
   background-color: #E2E7FF;
 }
@@ -26,6 +30,8 @@ body {
 #itemInfo {
   width: 100%;
   display: none;
+  margin-top: 24px;
+  padding: 0px 0px 0px 0px;
 }
 
 #listings {
@@ -52,4 +58,11 @@ body {
 #itemInfo span:hover {
   color: red;
   cursor: pointer;
+}
+
+.infoSpacer {
+  margin-left: 24px;
+  text-align: center;
+  width: 80%;
+  margin-left: 10%;
 }
