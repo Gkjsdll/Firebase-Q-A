@@ -1,8 +1,29 @@
 body {
-  background-color: #ffe2e2;
+  background-color: #E2E7FF;
+}
+
+#addListing {
+  position: fixed;
+  width: 100%;
+  height: 200px;
+  border-bottom: 1px solid lightgrey;
+  background-color: #ff8e8e;
+  text-align: center;
+  z-index: 5;
+  min-width: 500px;
+  top: 0px;
+}
+
+#addListing * {
+  vertical-align: middle;
+  margin-top: 35px;
 }
 
 #itemInfo {
   width: 100%;
   display: none;
+}
+
+#listings {
+  margin-top: 200px;
 }
